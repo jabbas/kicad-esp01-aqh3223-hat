@@ -26,39 +26,6 @@ F 3 "http://l0l.org.uk/2014/12/esp8266-modules-hardware-guide-gotta-catch-em-all
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:BC547 Q2
-U 1 1 5D77CAE0
-P 5500 4750
-F 0 "Q2" H 5691 4796 50  0000 L CNN
-F 1 "BC547" H 5691 4705 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5700 4675 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 5500 4750 50  0001 L CNN
-	1    5500 4750
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR06
-U 1 1 5D79E47E
-P 5300 2550
-F 0 "#PWR06" H 5300 2300 50  0001 C CNN
-F 1 "GND" H 5305 2377 50  0000 C CNN
-F 2 "" H 5300 2550 50  0001 C CNN
-F 3 "" H 5300 2550 50  0001 C CNN
-	1    5300 2550
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR07
-U 1 1 5D79EB82
-P 5300 4850
-F 0 "#PWR07" H 5300 4600 50  0001 C CNN
-F 1 "GND" H 5305 4677 50  0000 C CNN
-F 2 "" H 5300 4850 50  0001 C CNN
-F 3 "" H 5300 4850 50  0001 C CNN
-	1    5300 4850
-	0    1    1    0   
-$EndComp
-$Comp
 L power:GND #PWR03
 U 1 1 5D7ABD3F
 P 4750 3350
@@ -164,17 +131,6 @@ F 3 "~" H 6800 7350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:BC547 Q1
-U 1 1 5D77B6AC
-P 5500 2650
-F 0 "Q1" H 5691 2696 50  0000 L CNN
-F 1 "BC547" H 5691 2605 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5700 2575 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 5500 2650 50  0001 L CNN
-	1    5500 2650
-	0    1    -1   0   
-$EndComp
-$Comp
 L AQH3223:AQH3223 U4
 U 1 1 5EAFDDA7
 P 6600 4050
@@ -185,10 +141,6 @@ F 3 "" H 6600 4050 60  0000 C CNN
 	1    6600 4050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4750 3650 5500 3650
-Wire Wire Line
-	5500 3650 5500 4550
 $Comp
 L Device:R R3
 U 1 1 5EB1ECA8
@@ -235,25 +187,16 @@ L Device:R R1
 U 1 1 5EB3ACA6
 P 2700 3350
 F 0 "R1" V 2493 3350 50  0000 C CNN
-F 1 "4k7Ω" V 2584 3350 50  0000 C CNN
+F 1 "1kΩ" V 2584 3350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2630 3350 50  0001 C CNN
 F 3 "~" H 2700 3350 50  0001 C CNN
 	1    2700 3350
 	0    1    1    0   
 $EndComp
-Connection ~ 2850 3350
 Text GLabel 2550 3350 0    50   Input ~ 0
 +3.3V
 NoConn ~ 6600 4050
 NoConn ~ 6600 5250
-Wire Wire Line
-	2850 2850 2850 3350
-Wire Wire Line
-	5500 2850 2850 2850
-Wire Wire Line
-	5700 2550 6600 2550
-Wire Wire Line
-	5700 4850 6600 4850
 NoConn ~ 6150 9900
 Wire Wire Line
 	3100 7250 3550 7250
@@ -380,7 +323,7 @@ U 1 1 5EC1BA9C
 P 10250 2300
 F 0 "J1" H 10330 2292 50  0000 L CNN
 F 1 "AC Terminal" H 10330 2201 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-6_1x06_P2.54mm_Horizontal" H 10250 2300 50  0001 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-6_P5.08mm" H 10250 2300 50  0001 C CNN
 F 3 "~" H 10250 2300 50  0001 C CNN
 	1    10250 2300
 	1    0    0    -1  
@@ -451,8 +394,6 @@ Wire Wire Line
 	9800 2400 10050 2400
 Wire Wire Line
 	9800 2600 10050 2600
-Text Label 3550 2850 0    50   ~ 0
-TX-Transistor
 Text Label 5100 3650 0    50   ~ 0
 RX-Transistor
 Text Label 6000 2550 0    50   ~ 0
@@ -481,31 +422,106 @@ I2C-SDA
 $Comp
 L power:GND #PWR09
 U 1 1 5EB6168A
-P 1800 2000
-F 0 "#PWR09" H 1800 1750 50  0001 C CNN
-F 1 "GND" H 1805 1827 50  0000 C CNN
-F 2 "" H 1800 2000 50  0001 C CNN
-F 3 "" H 1800 2000 50  0001 C CNN
-	1    1800 2000
+P 1700 2000
+F 0 "#PWR09" H 1700 1750 50  0001 C CNN
+F 1 "GND" H 1705 1827 50  0000 C CNN
+F 2 "" H 1700 2000 50  0001 C CNN
+F 3 "" H 1700 2000 50  0001 C CNN
+	1    1700 2000
 	-1   0    0    1   
 $EndComp
+Text GLabel 1800 2000 1    50   Input ~ 0
++3.3V
 $Comp
-L Switch:SW_DPDT_x2 SW1
-U 1 1 5EB63736
-P 1700 1350
-F 0 "SW1" V 1746 1162 50  0000 R CNN
-F 1 "VCC_Switch" V 1655 1162 50  0000 R CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 1700 1350 50  0001 C CNN
-F 3 "~" H 1700 1350 50  0001 C CNN
-	1    1700 1350
+L Connector:Conn_01x02_Male J3
+U 1 1 5EEFD846
+P 1450 6350
+F 0 "J3" H 1558 6531 50  0000 C CNN
+F 1 "5v Input" H 1558 6440 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 1450 6350 50  0001 C CNN
+F 3 "~" H 1450 6350 50  0001 C CNN
+	1    1450 6350
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	1700 1550 1700 2000
-Text GLabel 1600 1150 1    50   Input ~ 0
-+3.3V
-Text GLabel 1800 1150 1    50   Input ~ 0
+$Comp
+L power:GND #PWR0104
+U 1 1 5EEFEB61
+P 1550 6150
+F 0 "#PWR0104" H 1550 5900 50  0001 C CNN
+F 1 "GND" H 1555 5977 50  0000 C CNN
+F 2 "" H 1550 6150 50  0001 C CNN
+F 3 "" H 1550 6150 50  0001 C CNN
+	1    1550 6150
+	-1   0    0    1   
+$EndComp
+Text GLabel 1450 6150 1    50   Input ~ 0
 +5V
-Text Label 1700 1700 0    50   ~ 0
-I2C-VCC
+$Comp
+L Transistor_BJT:BC847 Q1
+U 1 1 5EF221B1
+P 5500 2650
+F 0 "Q1" H 5691 2604 50  0000 L CNN
+F 1 "BC847" H 5691 2695 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5700 2575 50  0001 L CIN
+F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 5500 2650 50  0001 L CNN
+	1    5500 2650
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5D79EB82
+P 5300 4850
+F 0 "#PWR07" H 5300 4600 50  0001 C CNN
+F 1 "GND" H 5305 4677 50  0000 C CNN
+F 2 "" H 5300 4850 50  0001 C CNN
+F 3 "" H 5300 4850 50  0001 C CNN
+	1    5300 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5700 4850 6600 4850
+$Comp
+L power:GND #PWR06
+U 1 1 5D79E47E
+P 5300 2550
+F 0 "#PWR06" H 5300 2300 50  0001 C CNN
+F 1 "GND" H 5305 2377 50  0000 C CNN
+F 2 "" H 5300 2550 50  0001 C CNN
+F 3 "" H 5300 2550 50  0001 C CNN
+	1    5300 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5700 2550 6600 2550
+$Comp
+L Transistor_BJT:BC847 Q2
+U 1 1 5EF36D05
+P 5500 4750
+F 0 "Q2" V 5735 4750 50  0000 C CNN
+F 1 "BC847" V 5826 4750 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5700 4675 50  0001 L CIN
+F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 5500 4750 50  0001 L CNN
+	1    5500 4750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4750 3650 5500 3650
+Wire Wire Line
+	5500 3650 5500 4550
+$Comp
+L Device:R R4
+U 1 1 5F235531
+P 2850 3000
+F 0 "R4" H 2780 2954 50  0000 R CNN
+F 1 "10kΩ" H 2780 3045 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2780 3000 50  0001 C CNN
+F 3 "~" H 2850 3000 50  0001 C CNN
+	1    2850 3000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2850 2850 5500 2850
+Wire Wire Line
+	2850 3350 2850 3150
+Connection ~ 2850 3350
 $EndSCHEMATC
